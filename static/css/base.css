@@ -6,6 +6,10 @@
     --jet: #363635;
 }
 
+.container {
+    text-align: center;
+}
+
 .page__body {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--jet)
