@@ -2,7 +2,7 @@ $(function(){
     $("#btn-register").on("click", registerUser)
 
     function registerUser(event){
-        var url = "https://httpbin.org/anything";
+        var url = "http://localhost:8000/api/users";
         
         event.preventDefault();
 
@@ -11,12 +11,20 @@ $(function(){
             email: $("#user-email-field").val()
         }
 
-        $.post(url, user)
-            .done(function(data) {
-                alert("Resposta do servidor: " + data.url)
-            })
-            .fail(function(error){
-                alert("Erro na chamada: " + error)
-            })
+        var body = JSON.stringify(user)
+
+        $.post({
+            url: url,
+            data: body,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            success: function(response){
+                alert("Resposta do servidor: " + response.uri)
+            },
+            error: function(xhr, status, err){
+                alert("Erro na chamada: " + err.responseText())
+            }
+        })
     }
 });
