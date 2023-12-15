@@ -20,8 +20,9 @@
                 <label for="email" class="form__label">Email</label>
                 <input class="form__field" type="email" name="user-email" id="user-email-field">
             </div>
-            <input class="register__btn btn" type="button" value="Cadastrar">
+            <input class="register__btn btn" type="button" value="Cadastrar" id="btn-register">
         </form>
     </div>
 </main>
+<script src="{{ url_for('static', filename='js/signup.js')}}"></script>
 {% endblock %}
