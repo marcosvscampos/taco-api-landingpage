@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+    TACO API - Cadastro
+{% endblock %}
+
+{% block index %}
+<a class="nav__btn btn" href="/">Voltar</a>
+{% endblock %}
+
+{% block main %}
+<main class="sign-up__page">
+    <div class="sign-up__form">
+        <p class="form__label">Nome Completo</p>
+        <input class="form__field" type="text" name="user-name" id="user-name-field">
+        <p class="form__label">Email</p>
+        <input class="form__field" type="email" name="user-email" id="user-email-field">
+        <input class="register__btn btn" type="button" value="Cadastrar">
+    </div>
+</main>
+{% endblock %}

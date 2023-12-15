@@ -1,0 +1,38 @@
+:root {
+    --persimmon: #F35B04;
+    --darker-persimmon: #c24b06;
+    --ghost-white: #f4f4f8;
+    --platinum: #E6E6EA;
+    --jet: #363635;
+}
+
+.page__body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--jet)
+}
+
+.btn {
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.main__heading {
+    display: flex;
+    background-color: var(--persimmon);
+    color: var(--ghost-white);
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.main__heading__title {
+    margin-left: 5px;
+}
+
+.nav__btn {
+    text-decoration: none;
+    background-color: var(--platinum);
+    padding: 15px 20px;
+    margin: 0 15px;
+    color: var(--persimmon);
+}
