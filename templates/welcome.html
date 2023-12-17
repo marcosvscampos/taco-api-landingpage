@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+    TACO API - Sucesso!
+{% endblock %}
+
+{% block index %}
+<a class="nav__btn btn" href="/">Voltar</a>
+{% endblock %}
+
+{% block main %}
+<main class="welcome__page">
+    <div class="container">
+        <div class="welcome__form">
+            <h1 class="welcome__title">Bem Vindo, {{ name }}!</h1>
+            <p>Seu cadastro para começar a usar a TACO - API foi concluído com sucesso!</p>
+            <p>Enviamos a sua chave de acesso no email <span class="highlight__email">{{ email }}</span>. 
+                <span>Lembre-se de verificar sua caixa de SPAM.</span> 
+            </p>
+            <div>Para começar a usar, você pode acessar a página de 
+                <a href="#">Documentação</a> 
+                da TACO API e informar a sua chave de acesso para realizar seu primeiro request!</div>
+            <p>Qualquer dúvida, envie um email para <span class="highlight__email">suporte.taco-api@gmail.com</span> e responderemos suas dúvidas.</p>
+            <h2>Muito obrigado e aproveite!</h2>
+        </div>
+    </div>
+</main>
+{% endblock %}

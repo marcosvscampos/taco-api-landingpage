@@ -1,6 +1,13 @@
 $(function(){
     $("#btn-register").on("click", registerUser)
 
+    function redirectToWelcomePage(callbackURI) {
+        var parts = callbackURI.split("/")
+        var id = parts[parts.length - 1]
+        redirectURI = "/sign-up/success?user=" + id;
+        window.location.href = redirectURI;
+    }
+
     function registerUser(event){
         var url = "http://localhost:8000/api/users";
         
@@ -20,7 +27,7 @@ $(function(){
                 'Content-Type': 'application/json'
             },
             success: function(response){
-                alert("Resposta do servidor: " + response.uri)
+                redirectToWelcomePage(response.uri)
             },
             error: function(xhr, status, err){
                 alert("Erro na chamada: " + err.responseText())
