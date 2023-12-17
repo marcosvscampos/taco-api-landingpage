@@ -10,12 +10,19 @@
 
 {% block main %}
 <main class="sign-up__page">
-    <div class="sign-up__form">
-        <p class="form__label">Nome Completo</p>
-        <input class="form__field" type="text" name="user-name" id="user-name-field">
-        <p class="form__label">Email</p>
-        <input class="form__field" type="email" name="user-email" id="user-email-field">
-        <input class="register__btn btn" type="button" value="Cadastrar">
+    <div class="container">
+        <form class="sign-up__form">
+            <div class="sign-up__form-group">
+                <label for="nome-completo" class="form__label">Nome Completo</label>
+                <input class="form__field" type="text" name="user-name" id="user-name-field">
+            </div>
+            <div class="sign-up__form-group">
+                <label for="email" class="form__label">Email</label>
+                <input class="form__field" type="email" name="user-email" id="user-email-field">
+            </div>
+            <input class="register__btn btn" type="button" value="Cadastrar" id="btn-register">
+        </form>
     </div>
 </main>
+<script src="{{ url_for('static', filename='js/signup.js')}}"></script>
 {% endblock %}
