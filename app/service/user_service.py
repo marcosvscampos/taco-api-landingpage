@@ -1,6 +1,6 @@
 from app.dto.user_client_dto import UserClientDTO
 
-import requests, json
+import requests
 
 def get_user_by_id(user_id: str) -> UserClientDTO:
     url = f"http://localhost:8000/api/users/{user_id}"

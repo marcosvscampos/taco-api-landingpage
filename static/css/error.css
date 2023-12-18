@@ -1,0 +1,19 @@
+.error__page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    font-size: 1.8em;
+}
+
+.error__items__group {
+    display: flex;
+    flex-direction: row;
+    font-weight: bolder;
+    column-gap: 30px;
+    align-items: center;
+}
+
+#error__icon {
+    height:2.0em;
+}

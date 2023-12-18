@@ -11,13 +11,16 @@ def signup():
 
 @bp.route("/sign-up/success", methods=["GET"])
 def signup_success():
+    error_message:str = ""
     user_id:str = request.args.get("user")
     if (user_id is None):
-        return "<h1>Acesso não autorizado</h1>"
+        error_message = "Parâmetros obrigatórios não informados ou inválidos"
+        return render_template("error.html", message=error_message)
 
     response:UserClientDTO = user_service.get_user_by_id(user_id=user_id)
 
     if(response is None):
-        return f"<h1>Accesso não autorizado - Usuário ID {user_id} não encontrado</h1>"
+        error_message = f"Acesso não autorizado - Usuário não encontrado"
+        return render_template("error.html", message=error_message)
 
     return render_template("welcome.html", name=response.name, email=response.email)
