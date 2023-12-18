@@ -30,7 +30,19 @@ $(function(){
                 redirectToWelcomePage(response.uri)
             },
             error: function(xhr, status, err){
-                alert("Erro na chamada: " + err.responseText())
+                data = xhr.responseJSON
+                $.toast({
+                    heading: 'Erro',
+                    text: data.detail,
+                    allowToastClose: true,
+                    hideAfter: 3000,
+                    loader: false,
+                    position: 'bottom-right',
+                    bgColor: '#D30606',
+                    textColor: '#F4F4F8',
+                    icon: 'warning',
+                    stack: 3
+                })
             }
         })
     }
